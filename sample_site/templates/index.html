@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meat charset="utf-8">
+     
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    </head>
+
+
+<style>
+    * {
+        font-family: "Rubik", "sans-serif";
+    }
+
+    div {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: red;
+        font-size: 40pt;
+    }
+
+    p {
+        font-size: 24pt;
+    }
+</style>
+
+<div>
+    <h1>Hello!</h1><br>
+    <p>This site has been visited {{ count }} times.</p>
+</div>
+
+
+
+<body style="cursor:pointer">
+<canvas id="mycavas" width="1500" height="500" style="border:solid 4px #000000"></canvas>
+<input type="color" id="color1" name="color1"/>
+<output name="a" for="color1" onforminput="innerHTML=color1.value"></output>
+
+
+<body>
+<script type="text/javascript">
+    var mycavas = document.getElementById("mycavas");
+    var ctx= mycavas.getContext("2d");
+    ctx.lineWidth = 5;
+    ctx.strokeStyle= color1;
+
+    mycavas.onmousedown = function(){
+        mycavas.onmousemove = function(e){
+            ctx.lineTo(e.clientX, e.clientY);
+            ctx.stroke();
+
+        }
+    }
+
+    mycavas.onmouseup = function(){
+        mycavas.onmousemove = function(e){
+            ctx.moveTo(e.clientX,e.clientY)
+        }
+    }
+
+    mycavas.ondblclick = function(){
+        ctx.clearRect(0,0,mycavas.width, mycavas.height);
+        ctx.beginPath();
+    }
+    </script>
+    </body>
+
+
+</html>
