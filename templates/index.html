@@ -31,6 +31,7 @@
 <div>
     <h1>Hello!</h1><br>
     <p>This site has been visited {{ count }} times.</p>
+    <h2>Press the mouse to start drawing, double click to clear</h2>
 </div>
 
 
@@ -46,7 +47,7 @@
     var mycavas = document.getElementById("mycavas");
     var ctx= mycavas.getContext("2d");
     ctx.lineWidth = 5;
-    ctx.strokeStyle= "blue";
+    ctx.strokeStyle= color1;
 
     mycavas.onmousedown = function(){
         mycavas.onmousemove = function(e){
